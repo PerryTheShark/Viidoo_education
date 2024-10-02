@@ -25,8 +25,10 @@
     # always loaded
     'data': [
         'security/groups.xml',
-        'views/education_student_views.xml'
+        'security/ir.model.access.csv',
         'views/education_student_views.xml',
+        'views/education_class_views.xml',
+        'views/education_school_views.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 ace_student,education.student user,model_education_student,,1,0,0,0
+ace_class,education.class user,model_education_class,,1,0,0,0
 ace_student_teacher,education.student teacher,model_education_student,group_teacher,1,1,1,1

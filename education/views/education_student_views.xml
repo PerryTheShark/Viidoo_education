@@ -5,15 +5,37 @@
             <field name="model">education.student</field>
             <field name="arch" type="xml">
                 <form string="Student Form">
-                    <group>
+                    <header>
+                        <button name="change_to_new" type="object" string="New"/>
+                        <button name="change_to_studying" type="object" string="Studying"/>
+                        <button name="change_to_off" type="object" string="Off"/>
+                        <button name="find_student" type="object" string="Find Student"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
                         <group>
-                            <field name="name"/>
-                            <field name="student_code"/>
+                            <group>
+                                <field name="name"/>
+                                <field name="student_code"/>
+                                <field name="gender"/>
+                                <field name="date_of_birth"/>
+                                <field name="age"/>
+                            </group>
+                            <group>
+                                <field name="total_score"/>
+                                <field name="attached_file"/>
+                                <field name="write_date"/>
+                                <field name="currency_id"/>
+                                <field name="amount_paid"/>
+                            </group>
                         </group>
                         <group>
-                            <field name="class_id"/>
+                            <field name="notes"/>
                         </group>
-                    </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -24,8 +46,7 @@
             <field name="arch" type="xml">
                 <search string="Students Search">
                     <field name="name" filter_domain="['|', '|', ('name', 'ilike', self), ('student_code', '=', self)"/>
-                    <field name="
-                    class_id"/>
+                    <field name="class_id"/>
                 </search>
             </field>
         </record>
