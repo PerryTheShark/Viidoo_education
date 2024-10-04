@@ -1,5 +1,6 @@
 <odoo>
     <data>
+        <function model="education.student" name="_update_student_code"/>
         <record id="education_student_view_form" model="ir.ui.view">
             <field name="name">education.student.form</field>
             <field name="model">education.student</field>
@@ -10,6 +11,7 @@
                         <button name="change_to_studying" type="object" string="Studying"/>
                         <button name="change_to_off" type="object" string="Off"/>
                         <button name="find_student" type="object" string="Find Student"/>
+                        <button name="update_mobile_number" type="object" string="Update Mobile Number"/>
                         <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
@@ -17,9 +19,12 @@
                             <group>
                                 <field name="name"/>
                                 <field name="student_code"/>
+                                <field name="class_id"/>
+                                <field name="school_id"/>
                                 <field name="gender"/>
                                 <field name="date_of_birth"/>
                                 <field name="age"/>
+                                <field name="mobile"/>
                             </group>
                             <group>
                                 <field name="total_score"/>
@@ -27,6 +32,10 @@
                                 <field name="write_date"/>
                                 <field name="currency_id"/>
                                 <field name="amount_paid"/>
+
+                                <field name="dropout_reason"/>
+                                <button name="action_dropout" string="Dropout" type="object"/>
+
                             </group>
                         </group>
                         <group>

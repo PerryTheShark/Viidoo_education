@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+
+
+
+
 {
     'name': "Viin Education",
 
@@ -29,7 +33,9 @@
         'views/education_student_views.xml',
         'views/education_class_views.xml',
         'views/education_school_views.xml',
+        'views/education_student_dropout_wizard.xml',
         'views/templates.xml',
+        'data/data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
@@ -38,3 +44,4 @@
     "application": True,
     "license": "LGPL-3",
 }
+

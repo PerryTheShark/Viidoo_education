@@ -7,13 +7,24 @@
                 <form string="School Form">
                     <sheet>
                         <group>
-                            <group>
-                                <field name="name"/>
-                                <field name="code"/>
-                                <field name="address"/>
-                            </group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="address"/>
+                             <field id="tags_class_ids" name="class_ids" widget="many2many_tags"/>
                         </group>
+                        <notebook>
+                            <page string="Class in school">
+                                <field name="class_ids" options="{'no_create': True}">
+                                    <tree string="Classes">
+                                        <field name="name" string="Class Name"/>
+                                        <field name="code" string="Class Code"/>
+                                        <field name="total_students" string="student number"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
+
                 </form>
             </field>
         </record>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="main_school" model="education.school">
+        <field name="name">My School</field>
+        <field name="code">SCHOOL001</field>
+    </record>
+</odoo>

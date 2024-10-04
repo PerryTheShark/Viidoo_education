@@ -11,6 +11,7 @@
                                 <field name="name"/>
                                 <field name="max_student"/>
                                 <field name="code"/>
+                                <field name="school_id"/>
                             </group>
                             <group>
                                 <button name="get_all_students" type="object" string="Log All Students" />

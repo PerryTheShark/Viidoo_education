@@ -21,6 +21,11 @@ class EducationStudent(models.Model):
    description = fields.Html(string='Description')
    attached_file = fields.Binary('Attached File')
    write_date = fields.Datetime(string='Last Updated on')
+   mobile = fields.Char(string='Mobile')
+
+   dropout_reason = fields.Text(string='Dropout Reason')
+   def action_dropout(self):
+      return self.env.ref('education.education_student_dropout_wizard_action').read()[0]
 
    #Special fields
    currency_id = fields.Many2one('res.currency', string='Currency')
@@ -105,3 +110,16 @@ class EducationStudent(models.Model):
       domain = ['|', ('name', 'ilike', 'John'), ('class_id.name', '=', 'Class 01')]
       students = self.search(domain)
       print("Students in class 12A1: ", students)
+
+   @api.model
+   def _update_student_code(self):
+      all_students = self.search([])
+      for student in all_students:
+         if(student.school_id and student.name):
+            student.student_code = '%s_%s' % (student.school_id.code, student.name)
+            print("student_code: ", student.student_code)
+
+   def update_mobile_number(self):
+      self.ensure_one()
+      self = self.sudo()
+      self.mobile = "1113"
